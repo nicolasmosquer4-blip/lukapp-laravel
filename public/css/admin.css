@@ -13,20 +13,63 @@
     display: block;
 }
 
-/* Rediseño de botones en el sidebar para comportarse como links */
-.nav-link-btn {
+/* Botones del sidebar admin con el mismo aspecto que los links del panel de usuario */
+.admin-sidebar .nav-list {
+    gap: 6px;
+}
+
+.admin-sidebar .nav-section-title {
+    margin-bottom: 12px;
+}
+
+.nav-link-btn,
+.admin-sidebar .nav-item a {
+    min-height: 46px;
+    width: 100%;
+
     display: flex;
     align-items: center;
-    gap: 11px;
-    width: 100%;
-    text-align: left;
+    gap: 12px;
+
+    padding: 0 14px;
+
     background: transparent;
     border: none;
-    color: inherit;
+    border-radius: var(--radius-md);
+
+    color: #A9A9A9;
     font-family: inherit;
-    font-size: 13px;
-    padding: 0;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+
     cursor: pointer;
+    transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+.nav-link-btn:hover,
+.admin-sidebar .nav-item a:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #FFFFFF;
+}
+
+.nav-link-btn:focus-visible {
+    outline: 2px solid var(--danger-color);
+    outline-offset: 2px;
+}
+
+/* Elemento activo con el rojo de la identidad admin */
+.admin-sidebar .nav-item.active .nav-link-btn {
+    background: var(--danger-color);
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.admin-sidebar .nav-icon {
+    width: 22px;
+    font-size: 17px;
 }
 
 /* Buscador de usuarios */
